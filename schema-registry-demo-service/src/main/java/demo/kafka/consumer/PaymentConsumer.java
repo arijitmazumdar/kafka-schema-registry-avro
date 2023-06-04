@@ -20,7 +20,7 @@ public class PaymentConsumer {
     final AtomicInteger counter = new AtomicInteger();
     final PaymentService demoService;
 
-    @KafkaListener(topics = "send-payment", groupId = "demo-consumer-group", containerFactory = "kafkaListenerContainerFactory")
+    @KafkaListener(topics = "send-payment", groupId = "demo-consumer-group")
     public void listen(@Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String key, @Payload final SendPayment command) {
         counter.getAndIncrement();
         log.debug("Received message [" +counter.get()+ "] - key: " + key);

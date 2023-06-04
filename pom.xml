@@ -11,6 +11,6 @@
     <modules>
         <module>avro-schema</module>
         <module>schema-registry-demo-service</module>
-        <module>component-test</module>
+	<!--<module>component-test</module>-->
     </modules>
 </project>

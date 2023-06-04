@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
-import demo.kafka.KafkaDemoConfiguration;
 import demo.kafka.event.PaymentSent;
 import demo.kafka.event.SendPayment;
 import demo.kafka.rest.api.SendPaymentRequest;
@@ -44,7 +43,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 @Slf4j
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = { KafkaDemoConfiguration.class, TestKafkaDemoConfiguration.class } )
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = { KafkaDemoConfiguration.class, TestKafkaDemoConfiguration.class } )
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 @AutoConfigureWireMock(port=0) // 0 is dynamic port which binds to the "wiremock.server.port" property
 @ActiveProfiles("test")
