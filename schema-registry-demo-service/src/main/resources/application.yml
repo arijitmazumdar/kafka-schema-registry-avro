@@ -14,15 +14,17 @@ spring:
             basic.auth.credentials.source: USER_INFO
             schema.registry.basic.auth.user.info: ''
             schema.registry.url: https://psrc-lzvd0.ap-southeast-2.aws.confluent.cloud
-
+            specific.avro.reader: true
         consumer:
             bootstrap-servers: 'pkc-41p56.asia-south1.gcp.confluent.cloud:9092'
             group-id: group_id
             auto-offset-reset: earliest
-            key-serializer: org.apache.kafka.common.serialization.StringSerializer
-            value-serializer: org.apache.kafka.common.serialization.KafkaAvroSerializer
             key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
             value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+        producer:
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+
 
 server:
     port: 9001

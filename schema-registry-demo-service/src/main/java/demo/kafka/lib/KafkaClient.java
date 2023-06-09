@@ -31,7 +31,7 @@ public class KafkaClient {
             return result;
         } catch (Exception e) {
             String message = "Error sending message to topic " + properties.getOutboundTopic();
-            log.error(message);
+            log.error(message, e);
             throw new RuntimeException(message, e);
         }
     }
